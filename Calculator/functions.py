@@ -1,26 +1,16 @@
-def add(v1, v2):
-    v1 = input("Value 1")
-    v2 = input("Value 2")
-    res = v1 + v2
-    return res
+from decimal import Decimal
 
 
-def sub(v1, v2):
-    v1 = input("Value 1")
-    v2 = input("Value 2")
-    res = v1 - v2
-    return res
+def calculate(signal, act_value):
+    try:
+        value = eval(act_value)
 
+        if signal == '%':
+            value /= 100
+        elif signal == '±':
+            value = -value
+    except:
+        return 'Error'
 
-def mul(v1, v2):
-    v1 = input("Value 1")
-    v2 = input("Value 2")
-    res = v1 * v2
-    return res
-
-
-def div(v1, v2):
-    v1 = input("Value 1")
-    v2 = input("Value 2")
-    res = v1 / v2
-    return res
+    digits = min(abs(Decimal(value).as_tuple().exponent), 5)
+    return format(value, f'.{digits}f')
