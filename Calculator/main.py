@@ -10,7 +10,7 @@ buttons = [
     {'operator': '7', 'font': colors.WHITE, 'background': colors.WHITE24},
     {'operator': '8', 'font': colors.WHITE, 'background': colors.WHITE24},
     {'operator': '9', 'font': colors.WHITE, 'background': colors.WHITE24},
-    {'operator': '*', 'font': colors.WHITE, 'background': colors.ORANGE},
+    {'operator': 'X', 'font': colors.WHITE, 'background': colors.ORANGE},
     {'operator': '4', 'font': colors.WHITE, 'background': colors.WHITE24},
     {'operator': '5', 'font': colors.WHITE, 'background': colors.WHITE24},
     {'operator': '6', 'font': colors.WHITE, 'background': colors.WHITE24},
@@ -44,7 +44,7 @@ def main(page: ft.Page):
         elif value == 'C':
             value = '0'
         else:
-            if act_value and act_value[-1] in ('/', '*', '-', '+', '.'):
+            if act_value and act_value[-1] in ('/', 'X', '-', '+', '.'):
                 act_value = act_value[:-1]
 
             value = act_value + value
